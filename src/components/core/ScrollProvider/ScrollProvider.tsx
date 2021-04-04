@@ -35,7 +35,11 @@ const ScrollProvider = ({
 
   return (
     <>
-      <motion.div ref={scrollRef} style={{ y: spring }}>
+      <motion.div
+        ref={scrollRef}
+        style={{
+          y: spring,
+        }}>
         {children}
       </motion.div>
       <div style={{ height: pageHeight }} />
