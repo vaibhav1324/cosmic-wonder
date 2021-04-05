@@ -5078,6 +5078,11 @@ effector-react@^21.3.1:
   resolved "https://registry.yarnpkg.com/effector-react/-/effector-react-21.3.1.tgz#d5f082dabc982ffd80c81e1c544751f735113a7f"
   integrity sha512-iq/65va+zA5FOM5kgKDgzS0vY6rYqSNSVq9jZ4C7njPgiBpYd6jLTX+VWTxkT1sZwPRO6blanTNAajuy8jP+jw==
 
+effector-storage@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/effector-storage/-/effector-storage-4.2.0.tgz#8eae4bbb585d163de570712a0791ab5708b29164"
+  integrity sha512-W63sPJ5jSxfNDcHoVNM7KwwU/ns8PJaQ3kANWl+iWf1GlBJ0qoDVZKzjvsrhf4g9Id6V6ENTQHJQuiul5pDUUQ==
+
 effector@^21.8.11:
   version "21.8.11"
   resolved "https://registry.yarnpkg.com/effector/-/effector-21.8.11.tgz#fbe35fb754a9918fb33781a9a408b635218ff41a"

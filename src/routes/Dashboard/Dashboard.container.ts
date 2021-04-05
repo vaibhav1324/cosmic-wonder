@@ -4,9 +4,8 @@ import { useQuery } from 'react-query';
 import { DashboardProps } from './Dashboard.props';
 import View from './Dashboard.view';
 
-const Container = (props: DashboardProps) => {
+const Container: React.FC<DashboardProps> = (props) => {
   const { data, isLoading } = useQuery('get-pic-of-the-day', getPicOfTheDay);
-  console.log(data, isLoading);
 
   return View({});
 };

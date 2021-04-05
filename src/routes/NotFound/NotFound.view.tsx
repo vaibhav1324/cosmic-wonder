@@ -1,7 +1,7 @@
 import React from 'react';
 import { withMotion } from 'components/primitives/withMotion';
 
-const View = () => {
+const View: React.FC = () => {
   return <div>Not Found</div>;
 };
 

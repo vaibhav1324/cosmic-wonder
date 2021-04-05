@@ -1,19 +1,30 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { Flex, FlexProps } from '@chakra-ui/layout';
 
-const withMotion = (Component: React.FC): React.FC => {
-  const withProps = (props: any) => {
+type Merge<P, T> = Omit<P, keyof T> & T;
+type MotionBoxProps = Merge<FlexProps, HTMLMotionProps<'div'>>;
+const MotionFlex: React.FC<MotionBoxProps> = motion(Flex);
+
+const flexProps: MotionBoxProps = {
+  minH: 'inherit',
+  exit: { opacity: 0 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.3 },
+};
+
+const withMotion = <T extends object>(
+  Component: React.ComponentType<T>,
+): React.FC<T> => {
+  const WithProps = (props: T) => {
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        exit={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}>
+      <MotionFlex {...flexProps}>
         <Component {...props} />
-      </motion.div>
+      </MotionFlex>
     );
   };
-  return withProps;
+  return WithProps;
 };
 
 export default withMotion;
