@@ -11,7 +11,9 @@ const Container: React.FC<LoginProps> = (props) => {
         'asdasdasdasdas' +
         Math.random() * Math.random(),
     ).toString();
-    loginEvent({ ...values, id });
+    setTimeout(() => {
+      loginEvent({ ...values, id });
+    }, 3000);
   }, []);
 
   return View({

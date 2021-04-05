@@ -4,13 +4,9 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        fontFamily: 'Gothic A1',
+        fontFamily: 'Montserrat',
       },
     },
-  },
-  config: {
-    initialColorMode: 'dark',
-    useSystemColorMode: false,
   },
   colors: {
     brand: {
@@ -21,7 +17,7 @@ export const theme = extendTheme({
       500: '#e3e5f2',
     },
     bg: {
-      500: '#2f2929',
+      500: '#00071c',
     },
   },
   fontSizes: {
@@ -41,8 +37,8 @@ export const theme = extendTheme({
       variants: {
         outline: (props) => ({
           bg: 'white',
-          boxShadow: '0 0 2px 2px #efdfde',
           borderWidth: 1,
+          boxShadow: '0 0 2px 2px #efdfde',
           //@ts-ignore
           borderColor: props.theme.colors.brand[500],
           _hover: {
@@ -50,6 +46,9 @@ export const theme = extendTheme({
           },
         }),
         solid: (props) => ({
+          color: 'white',
+          fontFamily: 'Montserrat',
+          fontWeight: '600',
           //@ts-ignore
           bg: props.theme.colors.brand[500],
           _hover: {

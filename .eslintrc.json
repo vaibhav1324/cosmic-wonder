@@ -20,7 +20,8 @@
     "@typescript-eslint/ban-types": "off",
     "import/no-unresolved": "off",
     "import/named": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "css(css-curlyexpected)": "off"
   },
   "settings": {
     "react": {

@@ -7,7 +7,7 @@ type MotionBoxProps = Merge<FlexProps, HTMLMotionProps<'div'>>;
 const MotionFlex: React.FC<MotionBoxProps> = motion(Flex);
 
 const flexProps: MotionBoxProps = {
-  minH: 'inherit',
+  minH: '100vh',
   exit: { opacity: 0 },
   initial: { opacity: 0 },
   animate: { opacity: 1 },
