@@ -65,4 +65,14 @@ export const getStyles = (theme: any) => ({
     maxW: ['100%', '60%'],
     background: `linear-gradient(to right, ${theme.colors.bg[500]} 0%,transparent,transparent, transparent)`,
   } as BoxProps,
+
+  footer: {
+    px: 10,
+    py: 20,
+    flex: 1,
+    fontSize: 'xl',
+    color: '#fff',
+    fontWeight: 'bold',
+    bg: theme.colors.brand[500],
+  } as FlexProps,
 });

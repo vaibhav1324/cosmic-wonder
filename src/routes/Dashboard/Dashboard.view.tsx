@@ -29,7 +29,7 @@ const View: React.FC<DashboardGeneratedProps> = () => {
       </Flex>
       <PicOfDay containerRef={stackRef} />
       <ArticleList />
-      <Stack></Stack>
+      <Flex {...styles.footer}>Footer</Flex>
     </Stack>
   );
 };
