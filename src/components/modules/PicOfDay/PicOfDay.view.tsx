@@ -1,5 +1,5 @@
 import { Image } from '@chakra-ui/image';
-import { Stack, Text } from '@chakra-ui/layout';
+import { AspectRatio, Stack, Text } from '@chakra-ui/layout';
 import { Spinner } from '@chakra-ui/spinner';
 import { useTheme } from '@chakra-ui/system';
 import React from 'react';
@@ -22,7 +22,13 @@ const View: React.FC<PicOfDayGeneratedProps> = ({
         <>
           <Image src={data?.url} {...styles.blurImage} />
           <Stack {...styles.infoContainer}>
-            <Image src={data?.url} {...styles.image} />
+            {data?.url.includes('youtube.com') ? (
+              <AspectRatio {...styles.videoContainer}>
+                <iframe title="video" src={data.url} allowFullScreen />
+              </AspectRatio>
+            ) : (
+              <Image src={data?.url} {...styles.image} />
+            )}
             <Text {...styles.title}>{data?.title}</Text>
             <Text {...styles.description}>{data?.explanation}</Text>
           </Stack>

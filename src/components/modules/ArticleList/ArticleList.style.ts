@@ -4,9 +4,10 @@ import { BoxProps, FlexProps, StackProps } from '@chakra-ui/layout';
 export const getStyles = (theme: any) => ({
   container: {
     p: 20,
-    color: '#fff',
+    color: theme.colors.brand[600],
     direction: 'column',
     minH: '100vh',
+    bg: '#fff',
   } as FlexProps,
 
   listContainer: {
@@ -32,6 +33,7 @@ export const getStyles = (theme: any) => ({
     userSelect: 'none',
     borderRadius: '5px',
     overflow: 'hidden',
+    spacing: 0,
   } as StackProps,
 
   articleImgContainer: {
@@ -54,5 +56,7 @@ export const getStyles = (theme: any) => ({
   title: {
     px: 4,
     py: 2,
+    bg: theme.colors.brand[500],
+    flex: 1,
   } as BoxProps,
 });

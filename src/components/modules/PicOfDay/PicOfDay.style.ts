@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { ImageProps } from '@chakra-ui/image';
-import { BoxProps, StackProps } from '@chakra-ui/layout';
+import { AspectRatioProps, BoxProps, StackProps } from '@chakra-ui/layout';
 
 export const getStyles = (theme: any) => ({
   middleContainer: {
@@ -52,4 +52,11 @@ export const getStyles = (theme: any) => ({
     color: '#fff',
     noOfLines: [10, 7],
   } as BoxProps,
+
+  videoContainer: {
+    position: 'relative',
+    w: '100%',
+    maxW: '500px',
+    ratio: 2 / 1,
+  } as AspectRatioProps,
 });

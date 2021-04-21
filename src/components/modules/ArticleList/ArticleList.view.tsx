@@ -22,7 +22,7 @@ const Article = ({ item, onItemClick }: any) => {
           <Image {...styles.articleImg} src={item.imageUrl} />
         </Box>
         <Box {...styles.title}>
-          <Text w="100%" color="black">
+          <Text w="100%" color="#fff">
             {item.title}
           </Text>
         </Box>
@@ -47,7 +47,9 @@ const View: React.FC<ArticleListGeneratedProps> = ({ data, isLoading }) => {
 
   return (
     <Flex {...styles.container}>
-      <Text fontSize="40px">Latest Stories</Text>
+      <Text fontSize="40px" fontWeight="bold">
+        Latest Stories
+      </Text>
       <Stack {...styles.listContainer}>
         {isLoading ? (
           <Flex {...styles.loadingContainer}>
@@ -57,7 +59,6 @@ const View: React.FC<ArticleListGeneratedProps> = ({ data, isLoading }) => {
           <Flex alignItems="center">
             <IoMdArrowDropleft
               size="80px"
-              color="#fff"
               cursor="pointer"
               onClick={() => {
                 listRef.current?.scroll({
@@ -81,7 +82,6 @@ const View: React.FC<ArticleListGeneratedProps> = ({ data, isLoading }) => {
             </Flex>
             <IoMdArrowDropright
               size="80px"
-              color="#fff"
               cursor="pointer"
               onClick={() => {
                 listRef.current?.scroll({

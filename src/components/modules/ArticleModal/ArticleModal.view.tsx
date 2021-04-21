@@ -31,7 +31,12 @@ const ArticleModal: ArticleModalType = forwardRef(function ArticleModal(
   );
 
   return (
-    <Modal isCentered onClose={onClose} isOpen={isOpen} motionPreset="scale">
+    <Modal
+      isCentered
+      onClose={onClose}
+      isOpen={isOpen}
+      motionPreset="scale"
+      scrollBehavior="inside">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader maxW="90%">{data?.title}</ModalHeader>

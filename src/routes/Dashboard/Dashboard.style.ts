@@ -7,6 +7,7 @@ export const getStyles = (theme: any) => ({
   container: {
     bg: theme.colors.bg[500],
     w: '100%',
+    spacing: 0,
   } as StackProps,
 
   topContainer: {
@@ -74,5 +75,11 @@ export const getStyles = (theme: any) => ({
     color: '#fff',
     fontWeight: 'bold',
     bg: theme.colors.brand[500],
+    direction: 'column',
   } as FlexProps,
+
+  copyright: {
+    mt: 5,
+    fontSize: 'sm',
+  } as BoxProps,
 });
