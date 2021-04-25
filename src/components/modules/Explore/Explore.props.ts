@@ -5,7 +5,9 @@ export type ExploreProps = {};
 export type ExploreGeneratedProps = {};
 
 export type AnimatedItemProps = MotionFlexProps & {
-  containerRef: React.MutableRefObject<null>;
+  isVisible: boolean;
   image: any;
   title: string;
+  hover: Array<number>;
+  delay: number;
 };

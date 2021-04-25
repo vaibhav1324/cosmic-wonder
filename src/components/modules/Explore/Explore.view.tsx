@@ -1,8 +1,8 @@
 import { Image } from '@chakra-ui/image';
-import { Box, Flex, Link, Stack, Text } from '@chakra-ui/layout';
+import { Box, Link, Stack, Text } from '@chakra-ui/layout';
 import { useTheme } from '@chakra-ui/system';
 import { useOnScreen } from 'hooks';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { AnimatedItemProps, ExploreGeneratedProps } from './Explore.props';
 import { getStyles } from './Explore.style';
 import journey from 'res/journey.png';
@@ -11,14 +11,15 @@ import space_station from 'res/space_station.png';
 import { MotionFlex } from 'components/primitives/MotionFlex';
 
 const AnimatedItem: React.FC<AnimatedItemProps> = ({
-  containerRef,
+  isVisible,
   image,
   title,
+  hover,
+  delay,
   ...props
 }) => {
   const theme = useTheme();
-  const styles = getStyles(theme);
-  const { isVisible } = useOnScreen(containerRef);
+  const styles = getStyles(theme, isVisible, hover, delay);
 
   return (
     <MotionFlex {...styles.item} {...props}>
@@ -37,6 +38,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
   const theme = useTheme();
   const styles = getStyles(theme);
   const containerRef = useRef(null);
+  const { isVisible } = useOnScreen(containerRef);
 
   return (
     <Box ref={containerRef} {...styles.mainContainer}>
@@ -46,23 +48,29 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           bottom="40vh"
           position="absolute"
           image={journey}
-          containerRef={containerRef}
           title={'Journey to \n Mars'}
+          isVisible={isVisible}
+          hover={[0, 10, 0, 10, 0]}
+          delay={0.3}
         />
         <AnimatedItem
           position="absolute"
           right={20}
           image={space_station}
-          containerRef={containerRef}
           title={'International \n Station'}
+          isVisible={isVisible}
+          hover={[0, 10, 0, 10, 0]}
+          delay={0.6}
         />
         <AnimatedItem
           position="absolute"
           right={60}
           bottom="5vh"
           image={explore}
-          containerRef={containerRef}
           title={'Explore new \n Planets'}
+          isVisible={isVisible}
+          hover={[0, 10, 0, 10, 0]}
+          delay={0.9}
         />
       </Box>
     </Box>
