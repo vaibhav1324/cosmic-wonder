@@ -56,6 +56,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           isVisible={isVisible}
           hover={[0, 10, 0, 10, 0]}
           delay={0.3}
+          onLinkPress={() => history.push(ROUTES.MARS.path)}
         />
         <AnimatedItem
           position="absolute"
@@ -76,6 +77,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           isVisible={isVisible}
           hover={[0, 10, 0, 10, 0]}
           delay={0.9}
+          onLinkPress={() => history.push(ROUTES.EXPLORE_PLANETS.path)}
         />
       </Box>
     </Box>
