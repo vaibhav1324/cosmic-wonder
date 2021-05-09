@@ -20,11 +20,13 @@
     "effector-storage": "^4.2.0",
     "formik": "^2.2.6",
     "framer-motion": "^4",
+    "leaflet": "^1.7.1",
     "ramda": "^0.27.1",
     "react": "^17.0.2",
     "react-blur": "^0.6.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
+    "react-leaflet": "^3.1.0",
     "react-query": "^3.13.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -57,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@types/leaflet": "^1.7.0",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",

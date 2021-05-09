@@ -9,6 +9,8 @@ import journey from 'res/journey.png';
 import explore from 'res/explore.png';
 import space_station from 'res/space_station.png';
 import { MotionFlex } from 'components/primitives/MotionFlex';
+import { useHistory } from 'react-router';
+import { ROUTES } from 'constants/routes';
 
 const AnimatedItem: React.FC<AnimatedItemProps> = ({
   isVisible,
@@ -16,6 +18,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
   title,
   hover,
   delay,
+  onLinkPress,
   ...props
 }) => {
   const theme = useTheme();
@@ -26,7 +29,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
       <Image {...styles.image} src={image} />
       <Stack {...styles.textContainer}>
         <Text {...styles.text}>{title}</Text>
-        <Link color={theme.colors.accent[600]}>
+        <Link color={theme.colors.accent[600]} onClick={onLinkPress}>
           <Text>Read more</Text>
         </Link>
       </Stack>
@@ -36,6 +39,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
 
 const View: React.FC<ExploreGeneratedProps> = () => {
   const theme = useTheme();
+  const history = useHistory();
   const styles = getStyles(theme);
   const containerRef = useRef(null);
   const { isVisible } = useOnScreen(containerRef);
@@ -61,6 +65,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           isVisible={isVisible}
           hover={[0, 10, 0, 10, 0]}
           delay={0.6}
+          onLinkPress={() => history.push(ROUTES.SPACE_STATION.path)}
         />
         <AnimatedItem
           position="absolute"

@@ -10,4 +10,5 @@ export type AnimatedItemProps = MotionFlexProps & {
   title: string;
   hover: Array<number>;
   delay: number;
+  onLinkPress?: () => void;
 };

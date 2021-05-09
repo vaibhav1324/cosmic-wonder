@@ -3,10 +3,10 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import { Flex, FlexProps } from '@chakra-ui/layout';
 
 type Merge<P, T> = Omit<P, keyof T> & T;
-type MotionBoxProps = Merge<FlexProps, HTMLMotionProps<'div'>>;
-const MotionFlex: React.FC<MotionBoxProps> = motion(Flex);
+type MotionFlexProps = Merge<FlexProps, HTMLMotionProps<'div'>>;
+const MotionFlex: React.FC<MotionFlexProps> = motion(Flex);
 
-const flexProps: MotionBoxProps = {
+const flexProps: MotionFlexProps = {
   minH: '100vh',
   exit: { opacity: 0 },
   initial: { opacity: 0 },

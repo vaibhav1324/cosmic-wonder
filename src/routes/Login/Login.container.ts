@@ -6,11 +6,11 @@ import { loginEvent } from 'effector/user/events';
 
 const Container: React.FC<LoginProps> = (props) => {
   const onSubmit = useCallback((values: User) => {
-    const id = String(
+    const id = `${String(
       Math.random() * Math.random() +
         'asdasdasdasdas' +
         Math.random() * Math.random(),
-    ).toString();
+    ).toString()}${Date.now()}`;
     setTimeout(() => {
       loginEvent({ ...values, id });
     }, 3000);
