@@ -38,7 +38,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format:all": "yarn prettier --write '**/*.{css,less,scss,html,ts,tsx,graphql,gql,json,js,jsx,md,yml,yaml}'"
   },
   "eslintConfig": {
     "extends": [

@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
+
 import { AspectRatio, Flex, Link, Stack, Text } from '@chakra-ui/layout';
 import { Spinner } from '@chakra-ui/spinner';
 import { LatLngExpression } from 'leaflet';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+
+import { issIcon } from './ISSIcon';
 import { ISSLocationGeneratedProps } from './ISSLocation.props';
 import { getStyles } from './ISSLocation.style';
-import { issIcon } from './ISSIcon';
 
 const View: React.FC<ISSLocationGeneratedProps> = ({ data, isLoading }) => {
   const styles = getStyles();

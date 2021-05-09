@@ -1,6 +1,8 @@
 import React, { forwardRef, useImperativeHandle } from 'react';
-import { ArticleModalType } from './ArticleModal.props';
+
 import { useDisclosure } from '@chakra-ui/hooks';
+import { Image } from '@chakra-ui/image';
+import { Link, Stack, Text } from '@chakra-ui/layout';
 import {
   Modal,
   ModalBody,
@@ -9,10 +11,10 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/modal';
-import { Image } from '@chakra-ui/image';
-import { Link, Stack, Text } from '@chakra-ui/layout';
-import { format } from 'date-fns';
 import { useTheme } from '@chakra-ui/system';
+import { format } from 'date-fns';
+
+import { ArticleModalType } from './ArticleModal.props';
 
 const ArticleModal: ArticleModalType = forwardRef(function ArticleModal(
   { data },

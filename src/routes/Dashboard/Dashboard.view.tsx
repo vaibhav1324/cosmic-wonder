@@ -1,15 +1,17 @@
 import React, { useRef } from 'react';
-import { DashboardGeneratedProps } from './Dashboard.props';
-import { withMotion } from 'components/primitives/withMotion';
-import { Box, Flex, Link, Stack, Text } from '@chakra-ui/layout';
-import { getStyles } from './Dashboard.style';
-import { useTheme } from '@chakra-ui/system';
+
 import { Image } from '@chakra-ui/image';
-import astronaut from 'res/landing_bg.jpeg';
-import { PicOfDay } from 'components/modules/PicOfDay';
+import { Box, Flex, Link, Stack, Text } from '@chakra-ui/layout';
+import { useTheme } from '@chakra-ui/system';
 import { ArticleList } from 'components/modules/ArticleList';
-import { ScrollDownIcon } from 'components/primitives/ScrollDownIcon';
 import { Explore } from 'components/modules/Explore';
+import { PicOfDay } from 'components/modules/PicOfDay';
+import { ScrollDownIcon } from 'components/primitives/ScrollDownIcon';
+import { withMotion } from 'components/primitives/withMotion';
+import astronaut from 'res/landing_bg.jpeg';
+
+import { DashboardGeneratedProps } from './Dashboard.props';
+import { getStyles } from './Dashboard.style';
 
 const View: React.FC<DashboardGeneratedProps> = () => {
   const theme = useTheme();

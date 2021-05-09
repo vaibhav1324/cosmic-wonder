@@ -1,6 +1,7 @@
 import React from 'react';
-import { HTMLMotionProps, motion } from 'framer-motion';
+
 import { Image, ImageProps } from '@chakra-ui/image';
+import { HTMLMotionProps, motion } from 'framer-motion';
 
 type Merge<P, T> = Omit<P, keyof T> & T;
 export type MotionImageProps = Merge<ImageProps, HTMLMotionProps<'div'>>;

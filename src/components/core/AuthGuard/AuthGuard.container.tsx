@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { AuthGuardPublicProps } from 'components/core/AuthGuard/AuthGuard.props';
-import { useHistory, useLocation } from 'react-router-dom';
-import { ROUTES } from 'constants/routes';
 import { useStore } from 'effector-react';
 import { UserStore } from 'effector/user/store';
+import { useHistory, useLocation } from 'react-router-dom';
+
+import { ROUTES } from 'constants/routes';
 
 const AuthGuard = ({ children }: AuthGuardPublicProps): JSX.Element => {
   const history = useHistory();

@@ -1,7 +1,9 @@
+import React, { useCallback } from 'react';
+
 import { Box, BoxProps } from '@chakra-ui/layout';
 import { useTheme } from '@chakra-ui/system';
-import React, { useCallback } from 'react';
 import { IoIosArrowDropdown } from 'react-icons/io';
+
 import { getStyles } from './ScrollDownIcon.style';
 
 type ScrollDownIconProps = BoxProps & {

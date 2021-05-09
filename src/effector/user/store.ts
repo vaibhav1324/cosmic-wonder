@@ -1,7 +1,8 @@
+import { persist } from 'effector-storage/local/fp';
 import { User } from 'types/user';
+
 import { UserDomain } from './domain';
 import { loginEvent, logoutEvent } from './events';
-import { persist } from 'effector-storage/local/fp';
 
 const initialState: Partial<User> = {};
 

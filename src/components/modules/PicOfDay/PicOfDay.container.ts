@@ -1,6 +1,8 @@
-import { getPicOfTheDay } from 'api/apod';
 import React from 'react';
+
+import { getPicOfTheDay } from 'api/apod';
 import { useQuery } from 'react-query';
+
 import { PicOfDayProps } from './PicOfDay.props';
 import View from './PicOfDay.view';
 

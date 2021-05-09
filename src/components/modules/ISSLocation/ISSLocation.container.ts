@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
+
+import { useToast } from '@chakra-ui/toast';
+import { getISSCurrentLocation } from 'api/iss';
 import { useQuery } from 'react-query';
+
 import { ISSLocationProps } from './ISSLocation.props';
 import View from './ISSLocation.view';
-import { getISSCurrentLocation } from 'api/iss';
-import { useToast } from '@chakra-ui/toast';
 
 const Container: React.FC<ISSLocationProps> = () => {
   const toast = useToast();

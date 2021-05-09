@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { Flex, Text } from '@chakra-ui/layout';
-import { withMotion } from 'components/primitives/withMotion';
-import { SpaceStationGeneratedProps } from './SpaceStation.props';
 import { ISSLocation } from 'components/modules/ISSLocation';
+import { withMotion } from 'components/primitives/withMotion';
+
+import { SpaceStationGeneratedProps } from './SpaceStation.props';
 import { getStyles } from './SpaceStation.style';
 
 const View: React.FC<SpaceStationGeneratedProps> = (props) => {

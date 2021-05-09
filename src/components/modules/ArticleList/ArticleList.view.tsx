@@ -1,15 +1,17 @@
 import React, { useRef, useState } from 'react';
+
 import { Image } from '@chakra-ui/image';
 import { Box, Flex, Stack, Text } from '@chakra-ui/layout';
 import { Spinner } from '@chakra-ui/spinner';
 import { useTheme } from '@chakra-ui/system';
 import { AnimatedCard } from 'components/primitives/AnimatedCard';
+import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import { Article as ArticleType } from 'types/article';
+
+import { ArticleModal } from '../ArticleModal';
 import { ArticleListGeneratedProps } from './ArticleList.props';
 import { getStyles } from './ArticleList.style';
 import './ArticleList.css';
-import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
-import { ArticleModal } from '../ArticleModal';
-import { Article as ArticleType } from 'types/article';
 
 const Article = ({ item, onItemClick }: any) => {
   const theme = useTheme();

@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { useToast } from '@chakra-ui/toast';
 import { getSpaceArticles } from 'api/articles';
-import React from 'react';
 import { useQuery } from 'react-query';
+
 import { ArticleListProps } from './ArticleList.props';
 import View from './ArticleList.view';
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { SpaceStationProps } from './SpaceStation.props';
 import View from './SpaceStation.view';
 

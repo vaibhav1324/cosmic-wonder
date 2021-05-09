@@ -1,16 +1,19 @@
+import React, { useRef } from 'react';
+
 import { Image } from '@chakra-ui/image';
 import { Box, Link, Stack, Text } from '@chakra-ui/layout';
 import { useTheme } from '@chakra-ui/system';
+import { MotionFlex } from 'components/primitives/MotionFlex';
 import { useOnScreen } from 'hooks';
-import React, { useRef } from 'react';
+import { useHistory } from 'react-router';
+import explore from 'res/explore.png';
+import journey from 'res/journey.png';
+import space_station from 'res/space_station.png';
+
+import { ROUTES } from 'constants/routes';
+
 import { AnimatedItemProps, ExploreGeneratedProps } from './Explore.props';
 import { getStyles } from './Explore.style';
-import journey from 'res/journey.png';
-import explore from 'res/explore.png';
-import space_station from 'res/space_station.png';
-import { MotionFlex } from 'components/primitives/MotionFlex';
-import { useHistory } from 'react-router';
-import { ROUTES } from 'constants/routes';
 
 const AnimatedItem: React.FC<AnimatedItemProps> = ({
   isVisible,

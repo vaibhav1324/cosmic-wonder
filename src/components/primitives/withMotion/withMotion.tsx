@@ -1,6 +1,7 @@
 import React from 'react';
-import { HTMLMotionProps, motion } from 'framer-motion';
+
 import { Flex, FlexProps } from '@chakra-ui/layout';
+import { HTMLMotionProps, motion } from 'framer-motion';
 
 type Merge<P, T> = Omit<P, keyof T> & T;
 type MotionFlexProps = Merge<FlexProps, HTMLMotionProps<'div'>>;

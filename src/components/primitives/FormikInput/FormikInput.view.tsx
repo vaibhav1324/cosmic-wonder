@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { Input } from '@chakra-ui/input';
 import { Box, Text } from '@chakra-ui/layout';
 import { useField } from 'formik';
-import React from 'react';
+
 import { FormikInputProps } from './FormikInput.props';
 
 const FormikInput: React.FC<FormikInputProps> = ({ name, label, ...props }) => {
