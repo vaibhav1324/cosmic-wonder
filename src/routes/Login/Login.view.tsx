@@ -1,13 +1,15 @@
 import React from 'react';
-import { Button } from '@chakra-ui/button';
+
+import { Button } from '@chakra-ui/react';
 import { Flex, Stack } from '@chakra-ui/layout';
 import { FormikInput } from 'components/primitives/FormikInput';
 import { withMotion } from 'components/primitives/withMotion';
 import { Form, Formik } from 'formik';
-import { User } from 'types/user';
-import { LoginGeneratedPrps } from './Login.props';
-import * as Yup from 'yup';
 import { theme } from 'theme/theme';
+import { User } from 'types/user';
+import * as Yup from 'yup';
+
+import { LoginGeneratedPrps } from './Login.props';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Please enter your full name'),

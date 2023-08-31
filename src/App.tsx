@@ -1,14 +1,19 @@
 import React from 'react';
-import Routes from 'routes';
-import { BrowserRouter } from 'react-router-dom';
+
 import { ChakraProvider } from '@chakra-ui/react';
-import { QueryClientProvider, QueryClient } from 'react-query';
+
+import { QueryClientProvider } from 'react-query';
+
+import { BrowserRouter } from 'react-router-dom';
+
+import Routes from 'routes';
+
 import { theme } from 'theme/theme';
+import { queryClient } from 'utils/queryClient';
 
 function App(): JSX.Element {
-  const client = new QueryClient();
   return (
-    <QueryClientProvider client={client}>
+    <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <Routes />

@@ -1,4 +1,4 @@
-import { ImageProps } from '@chakra-ui/image';
+import { ImageProps } from '@chakra-ui/react';
 import { BoxProps, FlexProps, StackProps } from '@chakra-ui/layout';
 
 export const getStyles = (theme: any) => ({

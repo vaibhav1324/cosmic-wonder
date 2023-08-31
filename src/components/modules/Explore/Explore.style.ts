@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { ImageProps } from '@chakra-ui/image';
+import { ImageProps } from '@chakra-ui/react';
 import { BoxProps, StackProps } from '@chakra-ui/layout';
 import { MotionFlexProps } from 'components/primitives/MotionFlex';
 

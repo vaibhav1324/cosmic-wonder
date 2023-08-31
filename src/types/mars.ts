@@ -21,3 +21,23 @@ export type MarsWeather = {
   unitOfMeasure: string;
   TZ_Data: string;
 };
+
+export type MarsPhotos = {
+  camera: {
+    full_name: string;
+    id: number;
+    name: string;
+    rover_id: number;
+  };
+  earth_date: string;
+  id: number;
+  img_src: string;
+  sol: number;
+  rover: {
+    id: number;
+    status: string;
+    launch_date: string;
+    landing_date: string;
+    name: string;
+  };
+};

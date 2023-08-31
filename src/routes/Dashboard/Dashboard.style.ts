@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { ImageProps } from '@chakra-ui/image';
+import { ImageProps } from '@chakra-ui/react';
 import { BoxProps, FlexProps, StackProps } from '@chakra-ui/layout';
+
 import { brandBoxShadow } from 'constants/styles';
 
 export const getStyles = (theme: any) => ({

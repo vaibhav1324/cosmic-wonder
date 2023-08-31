@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react';
+
+import { loginEvent } from 'effector/user/events';
 import { User } from 'types/user';
+
 import { LoginProps } from './Login.props';
 import View from './Login.view';
-import { loginEvent } from 'effector/user/events';
 
 const Container: React.FC<LoginProps> = (props) => {
   const onSubmit = useCallback((values: User) => {

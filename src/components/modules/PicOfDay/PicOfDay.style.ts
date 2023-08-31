@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { ImageProps } from '@chakra-ui/image';
+import { ImageProps } from '@chakra-ui/react';
 import { AspectRatioProps, BoxProps, StackProps } from '@chakra-ui/layout';
 
 export const getStyles = (theme: any) => ({
   middleContainer: {
     p: 10,
-    minH: '100vh',
+    minH: '102vh',
     maxH: '100vh',
     overflow: 'hidden',
     alignItems: 'center',

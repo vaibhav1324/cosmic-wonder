@@ -1,4 +1,5 @@
 import { brandBoxShadow } from 'constants/styles';
+
 import { MotionBoxProps } from '../MotionBox';
 
 export const getStyles = (theme: any) => ({

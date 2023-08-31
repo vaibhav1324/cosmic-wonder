@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import { Image } from '@chakra-ui/image';
+import { Image } from '@chakra-ui/react';
 import { Box, Flex, Stack, Text } from '@chakra-ui/layout';
 import { Spinner } from '@chakra-ui/spinner';
 import { useTheme } from '@chakra-ui/system';

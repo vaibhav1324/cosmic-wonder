@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { ISSLocation } from '../types/iss';
 
 export const getISSCurrentLocation = async (): Promise<ISSLocation> => {

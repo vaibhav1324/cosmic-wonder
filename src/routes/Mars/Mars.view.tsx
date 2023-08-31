@@ -1,7 +1,8 @@
 import React, { useLayoutEffect } from 'react';
 
-import { Image } from '@chakra-ui/image';
+import { Image } from '@chakra-ui/react';
 import { Flex, Text } from '@chakra-ui/layout';
+import { MarsPhotos } from 'components/modules/MarsPhotos';
 import { MarsWeather } from 'components/modules/MarsWeather';
 import { withMotion } from 'components/primitives/withMotion';
 import { useScrollDirection, Direction } from 'hooks';
@@ -15,7 +16,10 @@ const Header: React.FC = () => {
 
   useLayoutEffect(() => {
     if (direction === Direction.DOWN) {
-      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth',
+      });
     }
   }, [direction]);
 
@@ -34,7 +38,7 @@ const View: React.FC<MarsGeneratedProps> = (props) => {
     <Flex {...styles.container}>
       <Header />
       <MarsWeather />
-      <Flex h="100vh" w="100%" bg="red.200" />
+      <MarsPhotos />
     </Flex>
   );
 };

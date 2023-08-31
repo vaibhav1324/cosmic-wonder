@@ -1,4 +1,4 @@
-import { ImageProps } from '@chakra-ui/image';
+import { ImageProps } from '@chakra-ui/react';
 import { BoxProps, FlexProps } from '@chakra-ui/layout';
 import mars from 'res/mars.jpg';
 
