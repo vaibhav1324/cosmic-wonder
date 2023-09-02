@@ -6,24 +6,27 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 
 import { getStyles } from './ScrollDownIcon.style';
 
-type ScrollDownIconProps = BoxProps & {
-  containerRef: React.MutableRefObject<HTMLDivElement | null>;
-};
+type ScrollDownIconProps = BoxProps;
 
-const ScrollDownIcon: React.FC<ScrollDownIconProps> = ({
-  containerRef,
-  ...props
-}) => {
+const ScrollDownIcon: React.FC<ScrollDownIconProps> = (props) => {
   const theme = useTheme();
   const styles = getStyles(theme);
 
-  const scrollDown = useCallback(() => {
-    containerRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const handleScrollIntoView = useCallback(() => {
+    const element = document.getElementById('section-pic-of-day');
+
+    if (element === null) {
+      return;
+    }
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+    });
   }, []);
 
   return (
     <Box
-      onClick={scrollDown}
+      onClick={handleScrollIntoView}
       as={IoIosArrowDropdown}
       {...styles.icon}
       {...props}

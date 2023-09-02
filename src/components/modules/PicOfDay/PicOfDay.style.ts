@@ -5,24 +5,26 @@ import { AspectRatioProps, BoxProps, StackProps } from '@chakra-ui/layout';
 
 export const getStyles = (theme: any) => ({
   middleContainer: {
-    p: 10,
-    minH: '102vh',
+    px: 10,
+    minH: '100vh',
     maxH: '100vh',
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'relative',
   } as StackProps,
 
-  blurImage: {
-    w: '100%',
-    h: '100%',
-    maxH: '95vh',
-    maxW: '90vw',
-    objectFit: 'cover',
-    filter: 'blur(20px)',
-    borderRadius: '10px',
+  blurBg: {
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     position: 'absolute',
-  } as ImageProps,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    zIndex: '0',
+    filter: 'blur(5px)',
+  } as BoxProps,
 
   infoContainer: {
     w: '100%',

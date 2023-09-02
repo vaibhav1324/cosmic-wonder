@@ -1,28 +1,25 @@
 import React from 'react';
 
 import { Image } from '@chakra-ui/react';
-import { AspectRatio, Stack, Text } from '@chakra-ui/layout';
 import { Spinner } from '@chakra-ui/spinner';
+import { Stack, Box, AspectRatio, Text } from '@chakra-ui/layout';
+
 import { useTheme } from '@chakra-ui/system';
 
 import { PicOfDayGeneratedProps } from './PicOfDay.props';
 import { getStyles } from './PicOfDay.style';
 
-const View: React.FC<PicOfDayGeneratedProps> = ({
-  data,
-  isLoading,
-  containerRef,
-}) => {
+const View: React.FC<PicOfDayGeneratedProps> = ({ data, isLoading }) => {
   const theme = useTheme();
   const styles = getStyles(theme);
 
   return (
-    <Stack ref={containerRef} {...styles.middleContainer}>
+    <Stack {...styles.middleContainer} id="section-pic-of-day">
+      <Box {...styles.blurBg} backgroundImage={`url(${data?.url})`} />
       {isLoading ? (
         <Spinner color="#fff" size="xl" />
       ) : (
         <>
-          <Image src={data?.url} {...styles.blurImage} />
           <Stack {...styles.infoContainer}>
             {data?.url.includes('youtube.com') ? (
               <AspectRatio {...styles.videoContainer}>
