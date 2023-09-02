@@ -2,7 +2,7 @@ import { QueryClient } from 'react-query';
 
 import { createStandaloneToast } from '@chakra-ui/react';
 
-import { theme } from '../theme/theme';
+import { theme } from './theme';
 
 export const toast = createStandaloneToast({ theme });
 

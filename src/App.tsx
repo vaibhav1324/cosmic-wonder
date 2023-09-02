@@ -8,10 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Routes from 'routes';
 
-import { theme } from 'theme/theme';
-import { queryClient } from 'utils/queryClient';
+import { theme, queryClient } from 'utils';
 
-function App(): JSX.Element {
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>

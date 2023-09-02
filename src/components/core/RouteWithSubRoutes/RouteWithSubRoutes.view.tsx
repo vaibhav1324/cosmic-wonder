@@ -7,12 +7,6 @@ import { RouteWithSubRoutesProps } from './RouteWithSubRoutes.props';
 const RouteWithSubRoutes = (props: RouteWithSubRoutesProps): JSX.Element => {
   const { routes = {}, ...route } = props;
 
-  useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, []);
-
   return (
     <Route {...route}>
       {Object.values(routes).map((subRoute) => (

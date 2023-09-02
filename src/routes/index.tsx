@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import AuthGuard from 'components/core/AuthGuard';
-import RouteWithSubRoutes from 'components/core/RouteWithSubRoutes';
 import { AnimatePresence } from 'framer-motion';
 import { Switch, useLocation } from 'react-router';
 
+import RouteWithSubRoutes from 'components/core/RouteWithSubRoutes';
+
 import { ROUTES } from 'constants/routes';
 
-const Routes = (): JSX.Element => {
+const Routes: FC = () => {
   const location = useLocation();
 
   return (
-    <AuthGuard>
-      <AnimatePresence exitBeforeEnter initial={true}>
-        <Switch location={location} key={location.key}>
-          {Object.values(ROUTES).map((route) => (
-            <RouteWithSubRoutes key={route.path} {...route} exact />
-          ))}
-        </Switch>
-      </AnimatePresence>
-    </AuthGuard>
+    <AnimatePresence exitBeforeEnter initial={true}>
+      <Switch location={location} key={location.key}>
+        {Object.values(ROUTES).map((route) => (
+          <RouteWithSubRoutes key={route.path} {...route} exact />
+        ))}
+      </Switch>
+    </AnimatePresence>
   );
 };
 
