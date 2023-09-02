@@ -10,7 +10,7 @@ import explore from 'res/explore.png';
 import journey from 'res/journey.png';
 import space_station from 'res/space_station.png';
 
-import { ROUTES } from 'constants/routes';
+import { ROUTE_PATHS } from 'constants/routes';
 
 import { AnimatedItemProps, ExploreGeneratedProps } from './Explore.props';
 import { getStyles } from './Explore.style';
@@ -59,7 +59,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           isVisible={isVisible}
           hover={[0, 10, 0, 10, 0]}
           delay={0.3}
-          onLinkPress={() => history.push(ROUTES.MARS.path)}
+          onLinkPress={() => history.push(ROUTE_PATHS.MARS)}
         />
         <AnimatedItem
           position="absolute"
@@ -69,7 +69,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           isVisible={isVisible}
           hover={[0, 10, 0, 10, 0]}
           delay={0.6}
-          onLinkPress={() => history.push(ROUTES.SPACE_STATION.path)}
+          onLinkPress={() => history.push(ROUTE_PATHS.SPACE_STATION)}
         />
         <AnimatedItem
           position="absolute"
@@ -80,7 +80,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           isVisible={isVisible}
           hover={[0, 10, 0, 10, 0]}
           delay={0.9}
-          onLinkPress={() => history.push(ROUTES.EXPLORE_PLANETS.path)}
+          onLinkPress={() => history.push(ROUTE_PATHS.EXPLORE_PLANETS)}
         />
       </Box>
     </Box>

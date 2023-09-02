@@ -40,6 +40,11 @@ export const theme = extendTheme({
   },
   components: {
     Button: {
+      baseStyle: {
+        _focus: {
+          boxShadow: 'none',
+        },
+      },
       variants: {
         outline: (props) => ({
           bg: 'white',

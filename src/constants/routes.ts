@@ -28,3 +28,16 @@ export const ROUTES = {
     path: '/*',
   },
 } as const;
+
+type MutableRoutes = {
+  -readonly [key in keyof typeof ROUTES]: typeof ROUTES[key]['path'];
+};
+
+export const ROUTE_PATHS = Object.entries(ROUTES).reduce(
+  (acc, [key, value]) => {
+    (acc as any)[key] = value.path;
+
+    return acc;
+  },
+  {} as MutableRoutes,
+);
