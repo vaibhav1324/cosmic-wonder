@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Image } from '@chakra-ui/react';
 import { Box, Flex, Link, Stack, Text } from '@chakra-ui/layout';
@@ -10,7 +10,7 @@ import { ScrollDownIcon } from 'components/primitives/ScrollDownIcon';
 import { withMotion } from 'components/primitives/withMotion';
 import astronaut from 'res/landing_bg.jpeg';
 
-import { useSmoothScroll } from 'hooks';
+import { useImageParallax, useSmoothScroll } from 'hooks';
 
 import { DashboardGeneratedProps } from './Dashboard.props';
 import { getStyles } from './Dashboard.style';
@@ -19,7 +19,10 @@ const View: React.FC<DashboardGeneratedProps> = () => {
   const theme = useTheme();
   const styles = getStyles(theme);
 
+  const imageRef = useRef<HTMLImageElement>(null);
+
   useSmoothScroll();
+  useImageParallax(imageRef);
 
   const nasaCopyrightsLink =
     'https://www.nasa.gov/multimedia/guidelines/index.html';
@@ -27,9 +30,10 @@ const View: React.FC<DashboardGeneratedProps> = () => {
   return (
     <Stack {...styles.container}>
       <Flex {...styles.topContainer}>
-        <Box {...styles.bgContainer} />
-        <Image src={astronaut} {...styles.bgImage} />
-        <Box {...styles.imageBlur} />
+        <Flex {...styles.imgContainer} alignSelf="flex-end">
+          <Flex {...styles.blurEffect} />
+          <Image src={astronaut} {...styles.bgImage} ref={imageRef} />
+        </Flex>
         <Box {...styles.card}>
           The Universe is under No obligation to make sense to You!
           <Text {...styles.authorName}>~ Neil deGrasse Tyson</Text>

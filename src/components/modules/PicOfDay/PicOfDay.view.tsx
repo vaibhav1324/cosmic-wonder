@@ -21,6 +21,9 @@ const View: React.FC<PicOfDayGeneratedProps> = ({ data, isLoading }) => {
       ) : (
         <>
           <Stack {...styles.infoContainer}>
+            <Text fontSize="30px" fontWeight="bold" color="#fff">
+              Picture Of The Day
+            </Text>
             {data?.url.includes('youtube.com') ? (
               <AspectRatio {...styles.videoContainer}>
                 <iframe title="video" src={data.url} allowFullScreen />

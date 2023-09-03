@@ -50,9 +50,10 @@ export const getStyles = (theme: any) => ({
   } as BoxProps,
 
   description: {
-    maxW: '85%',
+    maxW: ['85%', '60%'],
     color: '#fff',
     noOfLines: [10, 7],
+    textAlign: 'justify',
   } as BoxProps,
 
   videoContainer: {

@@ -53,7 +53,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
         <AnimatedItem
           left={10}
           bottom="40vh"
-          position="absolute"
+          position={['initial', 'absolute']}
           image={journey}
           title={'Journey to \n Mars'}
           isVisible={isVisible}
@@ -62,7 +62,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           onLinkPress={() => history.push(ROUTE_PATHS.MARS)}
         />
         <AnimatedItem
-          position="absolute"
+          position={['initial', 'absolute']}
           right={20}
           image={space_station}
           title={'International \n Station'}
@@ -72,7 +72,7 @@ const View: React.FC<ExploreGeneratedProps> = () => {
           onLinkPress={() => history.push(ROUTE_PATHS.SPACE_STATION)}
         />
         <AnimatedItem
-          position="absolute"
+          position={['initial', 'absolute']}
           right={60}
           bottom="5vh"
           image={explore}

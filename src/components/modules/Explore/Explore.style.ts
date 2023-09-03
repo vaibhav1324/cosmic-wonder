@@ -28,6 +28,8 @@ export const getStyles = (
   } as BoxProps,
 
   item: {
+    margin: ['60px 0px', '0'],
+    maxW: ['200px', '100%'],
     alignItems: 'center',
     animate: [isVisible ? 'zoom' : 'hide', 'hover'],
     variants: {
@@ -64,6 +66,7 @@ export const getStyles = (
   } as MotionFlexProps,
 
   image: {
+    maxH: ['50px', '100%'],
     maxW: '180px',
     onDragStart: (e) => e.preventDefault(),
   } as ImageProps,
@@ -74,7 +77,7 @@ export const getStyles = (
   } as StackProps,
 
   text: {
-    fontSize: '35px',
+    fontSize: ['20px', '35px'],
     fontWeight: 'bold',
     whiteSpace: 'pre-line',
     lineHeight: 1.2,

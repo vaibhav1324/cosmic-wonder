@@ -3,7 +3,7 @@ import { BoxProps, FlexProps, StackProps } from '@chakra-ui/layout';
 
 export const getStyles = (theme: any) => ({
   container: {
-    p: 20,
+    p: [2, 4, 20],
     color: theme.colors.brand[600],
     direction: 'column',
     minH: '100vh',
@@ -13,7 +13,7 @@ export const getStyles = (theme: any) => ({
   listContainer: {
     spacing: 4,
     flexDirection: 'row',
-    py: 10,
+    py: 5,
     alignSelf: 'center',
     flex: 1,
   } as StackProps,
@@ -25,13 +25,13 @@ export const getStyles = (theme: any) => ({
   } as FlexProps,
 
   card: {
-    h: '100%',
-    w: ['150px', '300px'],
+    h: ['200px', '22vw'],
+    w: ['150px', '22vw'],
     maxH: ['300px', '400px'],
     fontSize: '20px',
     bg: '#f1f1f1',
     userSelect: 'none',
-    borderRadius: '5px',
+    borderRadius: '10px',
     overflow: 'hidden',
     spacing: 0,
   } as StackProps,
@@ -39,7 +39,7 @@ export const getStyles = (theme: any) => ({
   articleImgContainer: {
     w: '100%',
     overflow: 'hidden',
-    h: ['100px', '200px'],
+    h: ['100px', '250px'],
   } as BoxProps,
 
   articleImg: {

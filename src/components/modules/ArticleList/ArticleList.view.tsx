@@ -1,24 +1,40 @@
-import React, { useRef, useState } from 'react';
+import React, { FC, useMemo, useRef, useState } from 'react';
 
-import { Image } from '@chakra-ui/react';
+import { IconButton, Image, SimpleGrid } from '@chakra-ui/react';
 import { Box, Flex, Stack, Text } from '@chakra-ui/layout';
 import { Spinner } from '@chakra-ui/spinner';
 import { useTheme } from '@chakra-ui/system';
 import { AnimatedCard } from 'components/primitives/AnimatedCard';
-import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
-import { Article as ArticleType } from 'types/article';
 
-import { ArticleModal } from '../ArticleModal';
+import { ArticleModal, ArticleModalRef } from '../ArticleModal';
 import { ArticleListGeneratedProps } from './ArticleList.props';
 import { getStyles } from './ArticleList.style';
-import './ArticleList.css';
+import { Article } from 'types/article';
+import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
-const Article = ({ item, onItemClick }: any) => {
+const ArticleItem: FC<{
+  item: Article;
+  index: number;
+  onItemClick: () => void;
+}> = ({ item, index, onItemClick }) => {
   const theme = useTheme();
   const styles = getStyles(theme);
 
   return (
-    <AnimatedCard p={0} onClick={onItemClick}>
+    <AnimatedCard
+      p={0}
+      borderRadius="10px"
+      onClick={onItemClick}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{
+        scale: 1,
+        opacity: 1,
+      }}
+      transition={{
+        ease: 'easeInOut',
+        duration: 0.5,
+        delay: 0.3 * index,
+      }}>
       <Stack {...styles.card}>
         <Box {...styles.articleImgContainer}>
           <Image {...styles.articleImg} src={item.imageUrl} />
@@ -33,19 +49,26 @@ const Article = ({ item, onItemClick }: any) => {
   );
 };
 
-const View: React.FC<ArticleListGeneratedProps> = ({ data, isLoading }) => {
+const View: React.FC<ArticleListGeneratedProps> = ({
+  data = [],
+  isLoading,
+}) => {
   const theme = useTheme();
   const styles = getStyles(theme);
-  const listRef = useRef<HTMLDivElement | null>(null);
-  const offset = window.innerWidth * (80 / 100);
-  const scrollWidth = useRef(offset);
-  const [selectedArticle, setSelectedArticle] = useState<ArticleType | null>(
-    null,
+
+  const modalRef = useRef<ArticleModalRef>(null);
+
+  const [index, setIndex] = useState(0);
+
+  const slicedItems = useMemo(() => data.slice(index, index + 3), [
+    index,
+    data.length,
+  ]);
+
+  const isMoreItemsAvailable = useMemo(
+    () => data.slice(index + 3, index + 6).length > 0,
+    [index, data.length],
   );
-  const modalRef = useRef<{
-    onOpen: () => void;
-    onClose: () => void;
-  }>({ onClose: () => null, onOpen: () => null });
 
   return (
     <Flex {...styles.container}>
@@ -58,44 +81,68 @@ const View: React.FC<ArticleListGeneratedProps> = ({ data, isLoading }) => {
             <Spinner size="xl" />
           </Flex>
         ) : (
-          <Flex alignItems="center">
-            <IoMdArrowDropleft
-              size="80px"
-              cursor="pointer"
-              onClick={() => {
-                listRef.current?.scroll({
-                  left: -scrollWidth.current - offset,
-                  behavior: 'smooth',
-                });
-              }}
-            />
-            <Flex ref={listRef} className="list-container">
-              {data?.map((item, index) => (
-                <Article
+          <Flex align="center" gridGap="20px">
+            {index === 0 ? (
+              <Flex w="80px" />
+            ) : (
+              <IconButton
+                h="80px"
+                w="80px"
+                variant="ghost"
+                aria-label="left-icon"
+                icon={
+                  <IoMdArrowDropleft
+                    type="button"
+                    size="80px"
+                    cursor="pointer"
+                  />
+                }
+                onClick={() => {
+                  if (index === 0) {
+                    return;
+                  }
+
+                  setIndex((prevIndex) => prevIndex - 3);
+                }}
+              />
+            )}
+            <SimpleGrid columns={[1, 2, 3]} spacing="20px">
+              {slicedItems.map((item, index) => (
+                <ArticleItem
                   key={`${item.id}-${index}`}
                   item={item}
                   index={index}
                   onItemClick={() => {
-                    setSelectedArticle(item);
-                    modalRef.current.onOpen();
+                    modalRef.current?.onOpen(item);
                   }}
                 />
               ))}
-            </Flex>
-            <IoMdArrowDropright
-              size="80px"
-              cursor="pointer"
-              onClick={() => {
-                listRef.current?.scroll({
-                  left: scrollWidth.current + offset,
-                  behavior: 'smooth',
-                });
-              }}
-            />
+            </SimpleGrid>
+            {isMoreItemsAvailable ? (
+              <IconButton
+                h="80px"
+                w="80px"
+                variant="ghost"
+                aria-label="right-icon"
+                icon={
+                  <IoMdArrowDropright
+                    type="button"
+                    size="80px"
+                    cursor="pointer"
+                  />
+                }
+                onClick={() => {
+                  setIndex((prevIndex) => prevIndex + 3);
+                }}
+              />
+            ) : (
+              <Flex w="80px" />
+            )}
           </Flex>
         )}
       </Stack>
-      <ArticleModal ref={modalRef} data={selectedArticle} />
+
+      <ArticleModal ref={modalRef} />
     </Flex>
   );
 };

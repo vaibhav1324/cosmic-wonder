@@ -11,7 +11,9 @@ export const getStyles = (theme: any) => ({
     borderRadius: 30,
     cursor: 'pointer',
     position: 'absolute',
-    alignSelf: 'flex-end',
+    left: 'calc(50% - 65px)',
+    bottom: 0,
+    zIndex: 2,
     transition: 'all .2s ease-in-out',
     _hover: {
       bg: '#fff',

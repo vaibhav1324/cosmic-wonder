@@ -13,10 +13,12 @@ export const getStyles = (theme: any) => ({
 
   topContainer: {
     maxH: '100vh',
-    justify: 'center',
+    minH: '100vh',
+    justify: ['center', 'center', 'flex-end'],
     overflow: 'hidden',
     alignItems: 'flex-end',
     direction: ['column', 'column', 'row'],
+    position: 'relative',
   } as FlexProps,
 
   bgContainer: {
@@ -24,14 +26,32 @@ export const getStyles = (theme: any) => ({
     w: [0, 'auto'],
   } as BoxProps,
 
-  bgImage: {
+  imgContainer: {
     w: '100%',
+    h: '100%',
     maxH: '100vh',
-    objectFit: 'cover',
     maxW: ['100%', '60%'],
     alignSelf: 'flex-end',
-    transform: 'scaleX(-1)',
+    position: 'relative',
+    overflow: 'hidden',
+  } as FlexProps,
+
+  blurEffect: {
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+    position: 'absolute',
+    zIndex: 1,
+    background: `radial-gradient(circle, transparent, ${theme.colors.bg[500]} 80%)`,
+  } as FlexProps,
+
+  bgImage: {
+    w: '100%',
+    h: '100%',
+    objectFit: 'cover',
     objectPosition: '0px 0%',
+    position: 'absolute',
   } as ImageProps,
 
   card: {

@@ -1,8 +1,0 @@
-.list-container::-webkit-scrollbar {
-  display: none;
-}
-
-.list-container {
-  max-width: 80vw;
-  overflow-x: scroll;
-}

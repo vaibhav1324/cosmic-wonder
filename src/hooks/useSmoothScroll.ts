@@ -6,17 +6,14 @@ import { useEffect, useRef } from 'react';
  */
 const useSmoothScroll = () => {
   const isScrolling = useRef<boolean>(false);
+  const deltaYAccumulator = useRef<number>(0);
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     let target = 0;
 
     const handleScroll = (e: WheelEvent) => {
-      if (window.innerWidth < 600) {
-        return;
-      }
-
-      if (e.deltaX !== 0) {
+      if (window.innerWidth < 600 || e.deltaX !== 0) {
         return;
       }
 
@@ -26,7 +23,14 @@ const useSmoothScroll = () => {
         return;
       }
 
+      deltaYAccumulator.current += Math.abs(e.deltaY);
+
+      if (deltaYAccumulator.current < 50) {
+        return;
+      }
+
       isScrolling.current = true;
+      deltaYAccumulator.current = 0;
 
       const scrollDirection = e.deltaY > 0 ? 'down' : 'up';
       const windowHeight = window.innerHeight;

@@ -1,17 +1,11 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 
 import { Route } from 'react-router-dom';
 
 import { RouteWithSubRoutesProps } from './RouteWithSubRoutes.props';
 
-const RouteWithSubRoutes = (props: RouteWithSubRoutesProps): JSX.Element => {
+const RouteWithSubRoutes = (props: RouteWithSubRoutesProps) => {
   const { routes = {}, ...route } = props;
-
-  useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, []);
 
   return (
     <Route {...route}>
