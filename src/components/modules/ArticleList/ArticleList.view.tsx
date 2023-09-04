@@ -72,7 +72,7 @@ const View: React.FC<ArticleListGeneratedProps> = ({
 
   return (
     <Flex {...styles.container}>
-      <Text fontSize="40px" fontWeight="bold">
+      <Text fontSize="40px" fontWeight="bold" color="#fff">
         Latest Stories
       </Text>
       <Stack {...styles.listContainer}>
@@ -90,6 +90,7 @@ const View: React.FC<ArticleListGeneratedProps> = ({
                 w="80px"
                 variant="ghost"
                 aria-label="left-icon"
+                color={theme.colors.brand[500]}
                 icon={
                   <IoMdArrowDropleft
                     type="button"
@@ -122,6 +123,7 @@ const View: React.FC<ArticleListGeneratedProps> = ({
               <IconButton
                 h="80px"
                 w="80px"
+                color={theme.colors.brand[500]}
                 variant="ghost"
                 aria-label="right-icon"
                 icon={

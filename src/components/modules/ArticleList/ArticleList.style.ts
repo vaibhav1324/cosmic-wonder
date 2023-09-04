@@ -7,7 +7,6 @@ export const getStyles = (theme: any) => ({
     color: theme.colors.brand[600],
     direction: 'column',
     minH: '100vh',
-    bg: '#fff',
   } as FlexProps,
 
   listContainer: {

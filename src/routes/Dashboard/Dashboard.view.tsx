@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
 import { Image } from '@chakra-ui/react';
-import { Box, Flex, Link, Stack, Text } from '@chakra-ui/layout';
+import { Box, Flex, Stack, Text } from '@chakra-ui/layout';
 import { useTheme } from '@chakra-ui/system';
 import { ArticleList } from 'components/modules/ArticleList';
 import { Explore } from 'components/modules/Explore';
