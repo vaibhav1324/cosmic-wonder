@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import { QueryClientProvider } from 'react-query';
 
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import Routes from 'routes';
 
@@ -14,9 +14,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <BrowserRouter>
+        <HashRouter basename="/">
           <Routes />
-        </BrowserRouter>
+        </HashRouter>
       </ChakraProvider>
     </QueryClientProvider>
   );

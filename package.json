@@ -2,7 +2,7 @@
   "name": "cosmic-wonder",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://vaibhav1324.github.io/cosmic-wonder/",
+  "homepage": "https://vaibhav1324.github.io/cosmic-wonder",
   "dependencies": {
     "@chakra-ui/react": "^1.4.2",
     "@emotion/react": "^11",
