@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/cosmic-wonder/static/css/main.2185876a.chunk.css",
+    "main.js": "/cosmic-wonder/static/js/main.1cf6279b.chunk.js",
+    "main.js.map": "/cosmic-wonder/static/js/main.1cf6279b.chunk.js.map",
+    "runtime-main.js": "/cosmic-wonder/static/js/runtime-main.bac08c2a.js",
+    "runtime-main.js.map": "/cosmic-wonder/static/js/runtime-main.bac08c2a.js.map",
+    "static/js/2.e0689a15.chunk.js": "/cosmic-wonder/static/js/2.e0689a15.chunk.js",
+    "static/js/2.e0689a15.chunk.js.map": "/cosmic-wonder/static/js/2.e0689a15.chunk.js.map",
+    "index.html": "/cosmic-wonder/index.html",
+    "static/css/main.2185876a.chunk.css.map": "/cosmic-wonder/static/css/main.2185876a.chunk.css.map",
+    "static/js/2.e0689a15.chunk.js.LICENSE.txt": "/cosmic-wonder/static/js/2.e0689a15.chunk.js.LICENSE.txt",
+    "static/media/explore.e2d70def.png": "/cosmic-wonder/static/media/explore.e2d70def.png",
+    "static/media/journey.9d83df27.png": "/cosmic-wonder/static/media/journey.9d83df27.png",
+    "static/media/landing_bg.87c217aa.jpeg": "/cosmic-wonder/static/media/landing_bg.87c217aa.jpeg",
+    "static/media/mars.71b28f36.jpg": "/cosmic-wonder/static/media/mars.71b28f36.jpg",
+    "static/media/space_station.a2238fa9.png": "/cosmic-wonder/static/media/space_station.a2238fa9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bac08c2a.js",
+    "static/js/2.e0689a15.chunk.js",
+    "static/css/main.2185876a.chunk.css",
+    "static/js/main.1cf6279b.chunk.js"
+  ]
+}
