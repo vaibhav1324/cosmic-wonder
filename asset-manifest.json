@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cosmic-wonder/static/css/main.2185876a.chunk.css",
-    "main.js": "/cosmic-wonder/static/js/main.58982e63.chunk.js",
-    "main.js.map": "/cosmic-wonder/static/js/main.58982e63.chunk.js.map",
+    "main.js": "/cosmic-wonder/static/js/main.11c950c5.chunk.js",
+    "main.js.map": "/cosmic-wonder/static/js/main.11c950c5.chunk.js.map",
     "runtime-main.js": "/cosmic-wonder/static/js/runtime-main.bac08c2a.js",
     "runtime-main.js.map": "/cosmic-wonder/static/js/runtime-main.bac08c2a.js.map",
     "static/js/2.cc9ac647.chunk.js": "/cosmic-wonder/static/js/2.cc9ac647.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.bac08c2a.js",
     "static/js/2.cc9ac647.chunk.js",
     "static/css/main.2185876a.chunk.css",
-    "static/js/main.58982e63.chunk.js"
+    "static/js/main.11c950c5.chunk.js"
   ]
 }
